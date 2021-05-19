@@ -95,6 +95,14 @@ public class UserServlet extends HttpServlet {
             return;
         }
         
+        if(userRolesFacade.isRole("ADMIN",user)){
+            request.setAttribute("role", "ADMIN");
+        }else if(userRolesFacade.isRole("MANAGER",user)){
+            request.setAttribute("role", "MANAGER");
+        }else if(userRolesFacade.isRole("BUYER",user)){
+            request.setAttribute("role", "BUYER");
+        }
+        
         String path = request.getServletPath();
 
         switch (path) {
