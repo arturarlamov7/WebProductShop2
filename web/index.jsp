@@ -11,7 +11,7 @@
         <h3 class="m-2 w-100 text-center">Магазин продуктов</h3>
         <h3 class="text-center">Arlamov Product Shop</h3>
         <br>
-        <h1 class="text-center">Добро пожаловать!</h1>
+        <h1 class="text-center">Добро пожаловать в мой магазин!</h1>
         <p>${info}</p>
 
         <br><br><br>
