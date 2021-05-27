@@ -1,8 +1,4 @@
-<%-- 
-    Document   : editFurnitureForm
-    Created on : 16.12.2020, 11:33:31
-    Author     : Comp
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 

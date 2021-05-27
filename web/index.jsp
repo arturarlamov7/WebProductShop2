@@ -8,6 +8,8 @@
         <title>SPTVR19WebShop</title>
     </head>
     <body>
+        
+        
         <h3 class="m-2 w-100 text-center">Магазин продуктов</h3>
         <h3 class="text-center">Arlamov Product Shop</h3>
         <br>

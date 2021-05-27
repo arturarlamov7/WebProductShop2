@@ -62,7 +62,7 @@
                 <li class="nav-item">
                   <a class="nav-link <c:if test="${activeShowLoginForm eq true}">active</c:if>" href="showLoginForm">Войти</a>
                 </li>
-            </c:if>            
+            </c:if>   
       </ul>
     </div>
   </div>
