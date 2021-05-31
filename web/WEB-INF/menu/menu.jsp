@@ -60,7 +60,7 @@
                     <a class="nav-link <c:if test="${activeListFurnitures eq true}">active</c:if>" aria-current="page" href="listFurnitures">Список товаров</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link <c:if test="${activeShowLoginForm eq true}">active</c:if>" href="showLoginForm">Войти</a>
+                    <a class="nav-link <c:if test="${activeShowLoginForm eq true}">active</c:if>" id="showLoginForm"  href="showLoginForm">Войти</a>
                 </li>
             </c:if>   
       </ul>
