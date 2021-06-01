@@ -17,6 +17,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import web.webinf.guest.ShowLoginFormPage;
+import web.webinf.menu.MenuPage;
 
 /**
  *
@@ -52,20 +54,34 @@ public class AdminLoginTest {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
+//    @Test
+//    public void login() {
+//        System.out.println("Admin login test");
+//        WebElement el = driver.findElement(By.id("showLoginForm"));
+//        el.click();
+//        el = driver.findElement(By.id("login"));
+//        el.sendKeys("admin");
+//        el = driver.findElement(By.id("password"));
+//        el.sendKeys("12345");  
+//        el = driver.findElement(By.xpath("//input[@type='submit']"));
+//        el.click();
+//        el = driver.findElement(By.id("info"));
+//        System.out.println("Ожидается: Вы вошли как admin");
+//        System.out.println("выводится: "+el.getText());
+//        Assert.assertEquals("Вы вошли как admin", el.getText());
+//    }
+    
     @Test
-    public void login() {
-        System.out.println("Admin login test");
-        WebElement el = driver.findElement(By.id("showLoginForm"));
-        el.click();
-        el = driver.findElement(By.id("login"));
-        el.sendKeys("admin");
-        el = driver.findElement(By.id("password"));
-        el.sendKeys("12345");  
-        el = driver.findElement(By.xpath("//input[@type='submit']"));
-        el.click();
-        el = driver.findElement(By.id("info"));
-        System.out.println("Ожидается: Вы вошли как admin");
-        System.out.println("выводится: "+el.getText());
-        Assert.assertEquals("Вы вошли как admin", el.getText());
+    public void lostOfControlTest() { //потеря управляемости
+        MenuPage menuPage = new MenuPage(driver);
+        ShowLoginFormPage showLoginFormPage = menuPage.getShowLoginFormPage();
+        IndexPage indexPage = showLoginFormPage.loginValidUser("admin", "12345");
+        
     }
+    
+    
+   
+      
+    
+    
 }
