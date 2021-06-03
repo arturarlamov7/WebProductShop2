@@ -138,7 +138,7 @@ public class LoginServlet extends HttpServlet {
                 }
                 session = request.getSession(true);
                 session.setAttribute("user", user);
-                request.setAttribute("info", "Вы вошли!");
+                request.setAttribute("info", "You Sign Up!");
                 request.getRequestDispatcher(LoginServlet.pathToJsp.getString("index")).forward(request, response);
                 break;
             case "/logout":
@@ -146,7 +146,7 @@ public class LoginServlet extends HttpServlet {
                 if(session != null){
                     session.invalidate();
                 }
-                request.setAttribute("info", "Вы вышли!");
+                request.setAttribute("info", "You logout!");
                 request.getRequestDispatcher(LoginServlet.pathToJsp.getString("index")).forward(request, response);
                 break;
                 
