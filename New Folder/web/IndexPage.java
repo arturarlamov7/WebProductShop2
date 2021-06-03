@@ -15,7 +15,7 @@ import org.openqa.selenium.WebDriver;
 
 public class IndexPage {
     protected WebDriver driver;
-
+    
     public IndexPage(WebDriver driver) {
         this.driver = driver;
     }

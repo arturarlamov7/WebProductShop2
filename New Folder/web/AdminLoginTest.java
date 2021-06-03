@@ -16,6 +16,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import web.webinf.guest.ShowLoginFormPage;
 import web.webinf.menu.MenuPage;
 
 /**
@@ -74,13 +75,13 @@ public class AdminLoginTest {
         
     }
 
-//    @Test
-//    public void lostOfControlTest() { //потеря управляемости
-//        MenuPage menuPage = new MenuPage(driver);
-//        ShowLoginFormPage showLoginFormPage = menuPage.getShowLoginFormPage();
-//        IndexPage indexPage = showLoginFormPage.loginValidUser("admin", "12345");
-//       
-//   }
+   @Test
+    public void lostOfControlTest() { //потеря управляемости
+        MenuPage menuPage = new MenuPage(driver);
+        ShowLoginFormPage showLoginFormPage = menuPage.getShowLoginFormPage();
+        IndexPage indexPage = showLoginFormPage.loginValidUser("admin", "12345");
+       
+   }
     
     
    
