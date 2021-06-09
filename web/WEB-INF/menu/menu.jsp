@@ -27,7 +27,7 @@
                   <a class="nav-link <c:if test="${activeListBuyers eq true}">active</c:if>" href="listBuyers">Список покупателей</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link <c:if test="${activeAdminPanel eq true}">active</c:if>" href="adminPanel">Панель администратора</a>
+                  <a class="nav-link <c:if test="${activeAdminPanel eq true}">active</c:if>" id="adminPanel" href="adminPanel">Панель администратора</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link <c:if test="${activeLogout eq true}">active</c:if>" href="logout">Выйти</a>

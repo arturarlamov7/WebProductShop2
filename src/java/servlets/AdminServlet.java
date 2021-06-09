@@ -118,6 +118,7 @@ public class AdminServlet extends HttpServlet {
                 String roleId = request.getParameter("roleId");
                 String userId = request.getParameter("userId");
                 String changeRole = request.getParameter("changeRole");
+                
                 if("".equals(roleId) || roleId == null
                         || "".equals(userId) || userId == null){
                     request.setAttribute("roleId", roleId);
@@ -132,7 +133,7 @@ public class AdminServlet extends HttpServlet {
                 }else if("1".equals(changeRole)){
                     userRolesFacade.removeRoleFromUser(r,u);
                 }
-                request.setAttribute("info", "Роль назначена");
+                request.setAttribute("info", "Роль изменена");
                 request.getRequestDispatcher("/adminPanel").forward(request, response);
                 break;
         }

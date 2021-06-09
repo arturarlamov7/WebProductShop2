@@ -16,6 +16,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import web.webinf.admin.AdminPanelPage;
 import web.webinf.guest.ShowLoginFormPage;
 import web.webinf.menu.MenuPage;
 
@@ -25,6 +26,8 @@ import web.webinf.menu.MenuPage;
  */
 public class AdminLoginTest {
     static private WebDriver driver;
+    private final MenuPage menuPage = new MenuPage(driver);
+    
     public AdminLoginTest() {
     }
     
@@ -75,13 +78,40 @@ public class AdminLoginTest {
         
     }
 
+
    @Test
-    public void lostOfControlTest() { //потеря управляемости
+    public void lostOfControlTest() {     //потеря управляемости
+
         MenuPage menuPage = new MenuPage(driver);
-        ShowLoginFormPage showLoginFormPage = menuPage.getShowLoginFormPage();
-        IndexPage indexPage = showLoginFormPage.loginValidUser("admin", "12345");
+        ShowLoginFormPage showLoginFormPage = menuPage.getShowLoginFormPage();  //получаем из меню страницу входа
+        IndexPage indexPage = showLoginFormPage.loginValidUser("admin", "12345"); //ввод данных в инпуты
+        
+        if (!"You Sign Up! ".equals(indexPage.getMessageInfo())) {
+           Assert.fail("Нет такого пользователя или неправильный пароль");       
+        }
        
+        AdminPanelPage adminPanelPage = menuPage.getAdminPanelPage();
+        String massage = adminPanelPage.validLostAccess();
+        Assert.assertEquals("Изменить роль невозможно", massage);
+        
    }
+    
+    
+//        public void changeUserProfile(String login, boolean allowed){
+//            System.out.println("changeUserProfile("+login+","+allowed+"): ");
+//            menuPage.getListBuyersPage().getEditUserPage(login).changeUserProfile();
+//            String result = menuPage.getMessageInfo();
+//            String expected = "Данные пользователя изменены";
+//            System.out.println("    Expected: "+ expected);
+//            System.out.println("    Result: " + result);
+//            if(allowed){ 
+//                System.out.println("Expected и Result должны совпадать");
+//                Assert.assertEquals(result, expected);
+//            }else{
+//                System.out.println("Expected и Result должны несовпадать");
+//                Assert.assertNotEquals(result, expected);
+//            }
+//        }
     
     
    

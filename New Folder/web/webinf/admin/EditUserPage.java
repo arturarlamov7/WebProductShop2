@@ -3,30 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package web;
+package web.webinf.admin;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
+import web.IndexPage;
 
 /**
  *
  * @author artur
  */
-
-public class IndexPage {
+class EditUserPage {
     protected WebDriver driver;
-    private final By info = By.id("info");
-    public IndexPage(WebDriver driver) {
+    private final By buttonsubmitBy = By.xpath("//input[@type='submit']");
+    
+    public EditUserPage(WebDriver driver) {
         this.driver = driver;
     }
-    
-    public String getMessageInfo() {
-        return driver.findElement(By.id("info")).getText();
+    public IndexPage changeUserProfile(){
+        driver.findElement(buttonsubmitBy).click();
+        return new IndexPage(driver);
     }
-    
-    
-    
-
-    
 }
