@@ -24,11 +24,11 @@ import web.webinf.menu.MenuPage;
  *
  * @author user
  */
-public class AdminLoginTest {
+public class GeneralTest {
     static private WebDriver driver;
     private final MenuPage menuPage = new MenuPage(driver);
     
-    public AdminLoginTest() {
+    public GeneralTest() {
     }
     
     @BeforeClass
@@ -95,6 +95,19 @@ public class AdminLoginTest {
         Assert.assertEquals("Изменить роль невозможно", massage);
         
    }
+    
+    @Test
+    
+    public void logoutTest() {
+        
+        System.out.println("logoutTest: ");
+        menuPage.logout();
+        String result = menuPage.getMessageInfo();
+        String expected = "Вы вышли";
+        System.out.println("    Waiting: "+ expected );
+        System.out.println("    Printing: " + result );
+        Assert.assertEquals(result, expected);
+    }
     
     
 //        public void changeUserProfile(String login, boolean allowed){
